@@ -1,5 +1,5 @@
-﻿using System; 
- 
+﻿ususing System;
+
 namespace Task2
 
 {
@@ -7,25 +7,22 @@ namespace Task2
     {
         public string name;
         public int id;
-        public int yearst;
+        public static int year = 0;
 
-        public Student()
-        {
-            name = Console.ReadLine();
-            id = int.Parse(Console.ReadLine());
-            yearst = int.Parse(Console.ReadLine());
-        }
 
-        public Student(string name, int id, int yearst)
+
+        public Student(string name, int id)
         {
             this.name = name;
             this.id = id;
-            this.yearst = yearst;
+            year++;
         }
 
-        public override string ToString()
+        public void Print()
         {
-            return yearst + " " + name + " " + id;
+            Console.WriteLine("Name: " + name);
+            Console.WriteLine("Id: " + id);
+
         }
     }
 
@@ -35,9 +32,15 @@ namespace Task2
         static void Main(string[] args)
         {
 
-            Student st = new Student();
+            Student student1 = new Student("Yelnur", 10);
+            student1.Print();
+            Console.WriteLine("Year: " + Student.year);
 
-            Console.WriteLine(st);
+            Console.WriteLine();
+
+            Student student2 = new Student("Arman", 22);
+            student2.Print();
+            Console.WriteLine("Year: " + Student.year);
 
         }
     }
